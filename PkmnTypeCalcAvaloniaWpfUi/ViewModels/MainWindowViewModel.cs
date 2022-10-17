@@ -8,7 +8,6 @@ namespace PkmnTypeCalcAvaloniaWpfUi.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
         public List<IPkmnType> PrimaryTypePkmnTypeList { get; set; } = PkmnTypeFactory.GeneratePkmnTypeList();
         public List<IPkmnType> SecondaryTypePkmnTypeList { get; set; } = PkmnTypeFactory.GeneratePkmnTypeList();
     }
