@@ -38,7 +38,6 @@
 				</DataTemplate>
 			</ComboBox.ItemTemplate>
 		</ComboBox>
-		<!-- TODO: check if comboboxes are working fine -->
 		<!-- Secondary Type combobox -->
 		<ComboBox Grid.Row="2" Grid.Column="2" Margin="5" Items="{Binding SecondaryTypePkmnTypeList}"
                    SelectedIndex="0"
