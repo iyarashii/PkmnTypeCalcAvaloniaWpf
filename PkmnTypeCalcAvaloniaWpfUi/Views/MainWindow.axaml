@@ -31,7 +31,7 @@
 		<TextBlock Grid.Row="1" Text="Secondary Type" Grid.Column="2" HorizontalAlignment="Center"/>
 		<!--row 2-->
 		<!--Primary Type combobox-->
-		<ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Items="{Binding PrimaryTypePkmnTypeList}" SelectedIndex="0"
+		<ComboBox Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="5" Items="{Binding PrimaryTypePkmnTypeList}" SelectedIndex="0"
                   MaxDropDownHeight="1000">
 			<ComboBox.ItemTemplate>
 				<DataTemplate>
@@ -40,7 +40,7 @@
 			</ComboBox.ItemTemplate>
 		</ComboBox>
 		<!-- Secondary Type combobox -->
-		<ComboBox Grid.Row="2" Grid.Column="2" Margin="5" Items="{Binding SecondaryTypePkmnTypeList}"
+		<ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" Items="{Binding SecondaryTypePkmnTypeList}"
                    SelectedIndex="0"
                   MaxDropDownHeight="1000">
 			<ComboBox.ItemTemplate>
