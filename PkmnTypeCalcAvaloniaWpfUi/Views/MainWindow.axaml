@@ -6,48 +6,62 @@
         mc:Ignorable="d"
         x:Class="PkmnTypeCalcAvaloniaWpfUi.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
+		ExtendClientAreaToDecorationsHint="True"
         Title="Pokemon Type Calculator - Avalonia" Height="700" Width="450" SizeToContent="Height">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="20"/>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="20"/>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="20"/>
-			<RowDefinition Height="auto"/>
-			<RowDefinition Height="auto"/>
-			<RowDefinition Height="auto"/>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height="20"/>
-		</Grid.RowDefinitions>
-		<!--row 1-->
-		<TextBlock Grid.Row="1" Text="Primary Type" Grid.Column="1" HorizontalAlignment="Center"/>
-		<TextBlock Grid.Row="1" Text="Secondary Type" Grid.Column="2" HorizontalAlignment="Center"/>
-		<!--row 2-->
-		<!--Primary Type combobox-->
-		<ComboBox Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="5" Items="{Binding PrimaryTypePkmnTypeList}" SelectedIndex="0"
-                  MaxDropDownHeight="1000">
-			<ComboBox.ItemTemplate>
-				<DataTemplate>
-					<TextBlock Text="{Binding TypeName}" Foreground="{Binding TypeColor}"/>
-				</DataTemplate>
-			</ComboBox.ItemTemplate>
-		</ComboBox>
-		<!-- Secondary Type combobox -->
-		<ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" Items="{Binding SecondaryTypePkmnTypeList}"
-                   SelectedIndex="0"
-                  MaxDropDownHeight="1000">
-			<ComboBox.ItemTemplate>
-				<DataTemplate>
-					<TextBlock Text="{Binding TypeName}" Foreground="{Binding TypeColor}" />
-				</DataTemplate>
-			</ComboBox.ItemTemplate>
-		</ComboBox>
+
+
+	<Grid RowDefinitions="30,*">
+
+		<!-- Title bar -->
+		<Grid ColumnDefinitions="Auto,*" IsHitTestVisible="False" Background="Black">
+			<Image      Grid.Column="0" VerticalAlignment="Center" Source="/Assets/avalonia-logo.ico" Width="18" Margin="12,0,12,0" ></Image>
+			<TextBlock  Grid.Column="1" VerticalAlignment="Center" FontSize="12" >Pokemon Type Calculator - Avalonia</TextBlock>
+		</Grid>
+		
+		<!-- Window content -->
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="20"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="20"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="20"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="20"/>
+			</Grid.RowDefinitions>
+			<!--row 1-->
+			<TextBlock Grid.Row="1" Text="Primary Type" Grid.Column="1" HorizontalAlignment="Center"/>
+			<TextBlock Grid.Row="1" Text="Secondary Type" Grid.Column="2" HorizontalAlignment="Center"/>
+			<!--row 2-->
+			<!--Primary Type combobox-->
+			<ComboBox Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="5" Items="{Binding PrimaryTypePkmnTypeList}" SelectedIndex="0"
+					  MaxDropDownHeight="1000">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding TypeName}" Foreground="{Binding TypeColor}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<!-- Secondary Type combobox -->
+			<ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" Items="{Binding SecondaryTypePkmnTypeList}"
+					   SelectedIndex="0"
+					  MaxDropDownHeight="1000">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding TypeName}" Foreground="{Binding TypeColor}" />
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+		</Grid>
 	</Grid>
+
 </Window>
