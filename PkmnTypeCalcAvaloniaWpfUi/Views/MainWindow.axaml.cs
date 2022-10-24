@@ -1,3 +1,4 @@
+using Avalonia;
 using Avalonia.Controls;
 
 namespace PkmnTypeCalcAvaloniaWpfUi.Views
@@ -6,6 +7,9 @@ namespace PkmnTypeCalcAvaloniaWpfUi.Views
     {
         public MainWindow()
         {
+#if DEBUG
+                this.AttachDevTools();
+#endif
             InitializeComponent();
         }
     }
