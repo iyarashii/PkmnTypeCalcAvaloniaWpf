@@ -61,6 +61,13 @@
 					</DataTemplate>
 				</ComboBox.ItemTemplate>
 			</ComboBox>
+			<!--row 3-->
+			<DataGrid IsReadOnly="True" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Items="{Binding PrimaryTypePkmnTypeList}">
+				<DataGrid.Columns>
+					<DataGridTextColumn  Header="Type" Binding="{Binding TypeName}" Width="*"/>
+					<DataGridTextColumn Header="Damage multiplier" Binding="{Binding DmgMultiplier, StringFormat='{}{0}x'}" Width="*" />
+				</DataGrid.Columns>
+			</DataGrid>
 		</Grid>
 	</Grid>
 
