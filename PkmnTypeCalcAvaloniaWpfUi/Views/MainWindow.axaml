@@ -62,10 +62,25 @@
 				</ComboBox.ItemTemplate>
 			</ComboBox>
 			<!--row 3-->
-			<DataGrid IsReadOnly="True" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Items="{Binding PrimaryTypePkmnTypeList}">
+			<DataGrid IsReadOnly="True" 
+					  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" 
+					  Items="{Binding PrimaryTypePkmnTypeList}">
 				<DataGrid.Columns>
-					<DataGridTextColumn  Header="Type" Binding="{Binding TypeName}" Width="*"/>
-					<DataGridTextColumn Header="Damage multiplier" Binding="{Binding DmgMultiplier, StringFormat='{}{0}x'}" Width="*" />
+					<DataGridTemplateColumn Header="Type" Width="*" SortMemberPath="TypeName">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<TextBox BorderThickness="0" Background="{Binding TypeColor}" TextAlignment="Center" Text="{Binding TypeName}"/>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTemplateColumn Header="Damage multiplier" Width="*" SortMemberPath="DmgMultiplier">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<TextBox BorderThickness="0" Background="{Binding TypeColor}" TextAlignment="Center" 
+										 Text="{Binding DmgMultiplier, StringFormat='{}{0}x'}"/>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
 				</DataGrid.Columns>
 			</DataGrid>
 		</Grid>
