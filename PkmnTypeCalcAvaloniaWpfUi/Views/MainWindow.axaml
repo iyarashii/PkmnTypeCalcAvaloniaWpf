@@ -3,16 +3,14 @@
         xmlns:vm="using:PkmnTypeCalcAvaloniaWpfUi.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="800"
         x:Class="PkmnTypeCalcAvaloniaWpfUi.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
 		ExtendClientAreaToDecorationsHint="True"
         Title="Pokemon Type Calculator - Avalonia" Height="700" Width="450" SizeToContent="Height">
-
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
 
 	<Grid RowDefinitions="30,*">
 
@@ -61,22 +59,25 @@
 					</DataTemplate>
 				</ComboBox.ItemTemplate>
 			</ComboBox>
+			
 			<!--row 3-->
-			<DataGrid IsReadOnly="True" 
+			<DataGrid IsReadOnly="True" MinHeight="650" 
 					  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" 
 					  Items="{Binding PrimaryTypePkmnTypeList}">
 				<DataGrid.Columns>
 					<DataGridTemplateColumn Header="Type" Width="*" SortMemberPath="TypeName">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<TextBox BorderThickness="0" Background="{Binding TypeColor}" TextAlignment="Center" Text="{Binding TypeName}"/>
+								<TextBox Focusable="False" IsReadOnly="True" BorderThickness="0" 
+										 Foreground="{Binding TypeColor}" TextAlignment="Center" Text="{Binding TypeName}"/>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
 					<DataGridTemplateColumn Header="Damage multiplier" Width="*" SortMemberPath="DmgMultiplier">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<TextBox BorderThickness="0" Background="{Binding TypeColor}" TextAlignment="Center" 
+								<TextBox Focusable="False" IsReadOnly="True" BorderThickness="0" 
+										 Foreground="{Binding TypeColor}" TextAlignment="Center" 
 										 Text="{Binding DmgMultiplier, StringFormat='{}{0}x'}"/>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
