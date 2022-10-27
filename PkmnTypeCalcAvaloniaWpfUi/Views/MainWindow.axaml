@@ -3,6 +3,7 @@
         xmlns:vm="using:PkmnTypeCalcAvaloniaWpfUi.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:model="clr-namespace:PokemonTypeLibrary.Models;assembly=PokemonTypeLibrary"
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="800"
         x:Class="PkmnTypeCalcAvaloniaWpfUi.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -40,9 +41,10 @@
 			<TextBlock Grid.Row="1" Text="Primary Type" Grid.Column="1" HorizontalAlignment="Center"/>
 			<TextBlock Grid.Row="1" Text="Secondary Type" Grid.Column="2" HorizontalAlignment="Center"/>
 			<!--row 2-->
+			<!--todo check if model is needed or not namespace-->
 			<!--Primary Type combobox-->
-			<ComboBox Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="5" Items="{Binding PrimaryTypePkmnTypeList}" SelectedIndex="0"
-					  MaxDropDownHeight="1000">
+			<ComboBox Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="5" Items="{Binding PrimaryPkmnTypeList}" SelectedIndex="0"
+					  MaxDropDownHeight="1000" SelectedItem="{Binding SelectedPrimaryType}">
 				<ComboBox.ItemTemplate>
 					<DataTemplate>
 						<TextBlock Text="{Binding TypeName}" Foreground="{Binding TypeColor}"/>
@@ -50,9 +52,9 @@
 				</ComboBox.ItemTemplate>
 			</ComboBox>
 			<!-- Secondary Type combobox -->
-			<ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" Items="{Binding SecondaryTypePkmnTypeList}"
+			<ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" Items="{Binding SecondaryPkmnTypeList}"
 					   SelectedIndex="0"
-					  MaxDropDownHeight="1000">
+					  MaxDropDownHeight="1000" SelectedItem="{Binding SelectedSecondaryType}">
 				<ComboBox.ItemTemplate>
 					<DataTemplate>
 						<TextBlock Text="{Binding TypeName}" Foreground="{Binding TypeColor}" />
@@ -61,13 +63,13 @@
 			</ComboBox>
 			
 			<!--row 3-->
-			<DataGrid IsReadOnly="True" MinHeight="650" 
+			<DataGrid IsReadOnly="True" MinHeight="650"
 					  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" 
-					  Items="{Binding PrimaryTypePkmnTypeList}">
+					  Items="{Binding PkmnTypeList}">
 				<DataGrid.Columns>
 					<DataGridTemplateColumn Header="Type" Width="*" SortMemberPath="TypeName">
 						<DataGridTemplateColumn.CellTemplate>
-							<DataTemplate>
+							<DataTemplate DataType="model:PkmnType">
 								<TextBox Focusable="False" IsReadOnly="True" BorderThickness="0" 
 										 Foreground="{Binding TypeColor}" TextAlignment="Center" Text="{Binding TypeName}"/>
 							</DataTemplate>
@@ -75,7 +77,7 @@
 					</DataGridTemplateColumn>
 					<DataGridTemplateColumn Header="Damage multiplier" Width="*" SortMemberPath="DmgMultiplier">
 						<DataGridTemplateColumn.CellTemplate>
-							<DataTemplate>
+							<DataTemplate DataType="model:PkmnType">
 								<TextBox Focusable="False" IsReadOnly="True" BorderThickness="0" 
 										 Foreground="{Binding TypeColor}" TextAlignment="Center" 
 										 Text="{Binding DmgMultiplier, StringFormat='{}{0}x'}"/>
