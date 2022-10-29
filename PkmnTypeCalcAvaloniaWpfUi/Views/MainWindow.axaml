@@ -63,8 +63,8 @@
 			</ComboBox>
 			
 			<!--row 3-->
-			<DataGrid IsReadOnly="True" MinHeight="650"
-					  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" 
+			<DataGrid IsReadOnly="True" Height="650" IsVisible="{Binding CalculatedTableVisibility}"
+					  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden"
 					  Items="{Binding PkmnTypeList}">
 				<DataGrid.Columns>
 					<DataGridTemplateColumn Header="Type" Width="*" SortMemberPath="TypeName">
