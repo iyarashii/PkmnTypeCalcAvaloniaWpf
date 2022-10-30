@@ -66,6 +66,11 @@
 			<DataGrid IsReadOnly="True" Height="650" IsVisible="{Binding CalculatedTableVisibility}"
 					  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden"
 					  Items="{Binding PkmnTypeList}">
+				<DataGrid.Styles>
+					<Style Selector="DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
+						<Setter Property="Fill" Value="Transparent"/>
+					</Style>
+				</DataGrid.Styles>
 				<DataGrid.Columns>
 					<DataGridTemplateColumn Header="Type" Width="*" SortMemberPath="TypeName">
 						<DataGridTemplateColumn.CellTemplate>
