@@ -68,7 +68,7 @@
 					  Items="{Binding PkmnTypeList}">
 				<DataGrid.Styles>
 					<Style Selector="DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
-						<Setter Property="Fill" Value="Transparent"/>
+						<Setter Property="Opacity" Value="0"/>
 					</Style>
 				</DataGrid.Styles>
 				<DataGrid.Columns>
