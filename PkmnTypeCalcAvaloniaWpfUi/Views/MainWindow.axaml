@@ -41,7 +41,6 @@
 			<TextBlock Grid.Row="1" Text="Primary Type" Grid.Column="1" HorizontalAlignment="Center"/>
 			<TextBlock Grid.Row="1" Text="Secondary Type" Grid.Column="2" HorizontalAlignment="Center"/>
 			<!--row 2-->
-			<!--todo check if model is needed or not namespace-->
 			<!--Primary Type combobox-->
 			<ComboBox Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="5" Items="{Binding PrimaryPkmnTypeList}" SelectedIndex="0"
 					  MaxDropDownHeight="1000" SelectedItem="{Binding SelectedPrimaryType}">
