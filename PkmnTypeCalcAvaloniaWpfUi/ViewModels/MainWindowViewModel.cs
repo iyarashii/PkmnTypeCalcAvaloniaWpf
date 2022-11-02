@@ -16,8 +16,16 @@ namespace PkmnTypeCalcAvaloniaWpfUi.ViewModels
         public static string EmptyTypeName { get; } = PkmnTypeFactory.CreateEmptyPkmnType().TypeName;
         public List<IPkmnType> PrimaryPkmnTypeList { get; set; } = PkmnTypeFactory.GeneratePkmnTypeList();
         public List<IPkmnType> SecondaryPkmnTypeList { get; set; } = PkmnTypeFactory.GeneratePkmnTypeList();
-        public bool CalculatedTableVisibility { get => calculatedTableVisibility; set { this.RaiseAndSetIfChanged(ref calculatedTableVisibility, value); } }
-        public ObservableCollection<IPkmnType> PkmnTypeList { get => _pkmnTypeList; set { this.RaiseAndSetIfChanged(ref _pkmnTypeList, value); } }
+        public bool CalculatedTableVisibility 
+        { 
+            get => calculatedTableVisibility; 
+            set { this.RaiseAndSetIfChanged(ref calculatedTableVisibility, value); } 
+        }
+        public ObservableCollection<IPkmnType> PkmnTypeList 
+        { 
+            get => _pkmnTypeList; 
+            set { this.RaiseAndSetIfChanged(ref _pkmnTypeList, value); } 
+        }
         public IPkmnType SelectedPrimaryType
         {
             get => PrimaryPkmnTypeList.Where(type => type.TypeName == _selectedPrimaryType.TypeName).Single();
