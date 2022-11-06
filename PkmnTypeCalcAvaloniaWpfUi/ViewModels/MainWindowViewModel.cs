@@ -53,7 +53,7 @@ namespace PkmnTypeCalcAvaloniaWpfUi.ViewModels
             }
 
             // sort by damage multiplier from highest to lowest
-            PkmnTypeList = new ObservableCollection<IPkmnType>(PkmnTypeList.OrderByDescending(x => x.DmgMultiplier));
+            PkmnTypeList = new (PkmnTypeList.OrderByDescending(x => x.DmgMultiplier));
         }
     }
 }
