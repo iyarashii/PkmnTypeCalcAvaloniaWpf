@@ -72,6 +72,7 @@ namespace PkmnTypeCalcAvaloniaWpfUi.ViewModels
                 lastRemovedSecondaryType = null;
             }
 
+            // hide datagrid when both types are set to empty type
             if (_selectedPrimaryType.TypeName == EmptyTypeName && _selectedSecondaryType.TypeName == EmptyTypeName)
             {
                 CalculatedTableVisibility = false;
