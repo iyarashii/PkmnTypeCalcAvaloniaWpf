@@ -13,3 +13,6 @@ Sort by type name
 
 Sort by dmg multiplier  
 ![Sort by dmg multiplier](https://user-images.githubusercontent.com/38395954/200078474-fb32040b-d2cd-4838-afc4-e78da49e31fe.png)
+
+When type is selected in one of the comboboxes it is removed from the other checkbox since there are no pokemons with double type like FIRE/FIRE.  
+![FIRE not present in 2nd combobox](https://user-images.githubusercontent.com/38395954/201202278-a6ce84c7-cc3d-43b5-8b08-4f7e0de187c9.png)
