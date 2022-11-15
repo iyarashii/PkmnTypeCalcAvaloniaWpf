@@ -1,4 +1,13 @@
 # PkmnTypeCalcAvaloniaWpf
+Avalonia WPF implementation of the https://github.com/iyarashii/PokemonTypeCalculator  
+Other versions:
+- Xamarin.Android - https://github.com/iyarashii/PokemonTypeCalculator
+- WinForms - https://github.com/iyarashii/PkmnCalcWinForms
+- WPF - https://github.com/iyarashii/PkmnCalcWPF
+- ASP.NET with Razor Pages - https://github.com/iyarashii/PkmnTypeCalcRazorPages
+- Blazor WASM - https://github.com/iyarashii/PkmnCalcBlazorWasm
+- .NET MAUI Blazor App - https://github.com/iyarashii/PkmnCalcMauiBlazorApp  
+
 Initial window  
 ![Initial window](https://user-images.githubusercontent.com/38395954/200077666-586c0984-ff2f-4a7b-97de-eacff8fbc8bd.png)
 
